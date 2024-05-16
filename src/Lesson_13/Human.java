@@ -25,6 +25,10 @@ public class Human extends Object{
         this.father = father;
     }
 
+    public Human() {
+
+    }
+
     public String getName() {
         return name;
     }

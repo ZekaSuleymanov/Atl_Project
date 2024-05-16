@@ -1,6 +1,8 @@
 package Lesson_3;
 
-public class Scanner {
+import java.util.Scanner;
+
+public class Skanner {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();

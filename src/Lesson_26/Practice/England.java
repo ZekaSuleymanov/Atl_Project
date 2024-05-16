@@ -1,4 +1,4 @@
-package Lesson_26;
+package Lesson_26.Practice;
 
 public class England extends AbstratCountry {
     public England(String continent, int area){

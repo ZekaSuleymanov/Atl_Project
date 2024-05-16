@@ -18,6 +18,10 @@ public class Pet {
         this.habits = habits;
     }
 
+    public Pet() {
+
+    }
+
 
     public String getSpecies() {
         return species;
