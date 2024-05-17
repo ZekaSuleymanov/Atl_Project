@@ -42,6 +42,17 @@ public class Main {
         İnkapsulasiya (Encapsulation) əlaqəli sahələrin və metodların bir araya toplanmasına aiddir. Bu məlumatların
         gizlədilməsinə nail olmaq üçün İSTİFADƏ edilə bilər. Lakin İnkapsulasiya özülüyündə məlumatların gizlədilməsi DEYİL !!!
 
+        privete dəyərlər çevrilib olur public
+
+        Encapsulation - bütün dataları (variablelları) tək vahid halında bir method içinə baağlama məntiqidir.
+
+        * Qaydaları:
+        1) Encapsulation istifadə ediriksə classın daxilindəki bütün dəyişənlər private olmalıdır (dəyişdirilməsin).
+        2) Metodlar (getter və setter public olmalıdır)
+        3) Java Beanların adlandırılasına uyğun davam etməliyik. boolean tipində is'dir. return DEYİL !!! Bean məntiqi - is get set
+
+        Encapslation sayəsində əldə edilən immutable (dəyişməz) classı necə əldə edilir onu bilmək lazımdır
+
 
         OOP - obyekt class OOP'ə aiddir.
 
@@ -49,7 +60,7 @@ public class Main {
 
         1) Polimorfism
         2) Abstract
-        3) Inhertance
+        3) Inheritance
         4) Encapsulation
 
 
@@ -75,4 +86,11 @@ public class Main {
         * Mən get və set'ə əsasən istədiyim məlumatımı burdan set edirəm (mənimsədirəm, içini doldururam). Metod kimi
         ötürürəm. Öz daxilində baş verir.
         set vasitəsi ilə içinə dəyər yazıram, get vasitəsi ilə onu oxuyuram.
+
+        Classı dəyişməz etmək istəsəm fiel'da yazdığımız getter və settərdən - setteri silsəm. Geriyə get qalır. O zaman
+        fieldın dəyərini dəyişə bilmərəm. Bu zaman classı dəyişməz edirəm.
+
+        Bean / Pojo
+
+        * Beans -
  */

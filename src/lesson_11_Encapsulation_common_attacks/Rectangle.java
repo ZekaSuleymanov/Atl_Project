@@ -28,12 +28,20 @@ public class Rectangle {
         this.lenght = lenght;
     }
 */
+    // Hamını publicdən private'ə keçirdim. Çünki 2 ci dərsə öyrəndimki Encapsulation məntiqində fieldlar private metodlar
+    // publicdir. Springdə biz anotation sayəsində bir düymə ilə publicləri private ilə dəyişəciyik
+    // public double w;
+    private double w;
 
-    public double w;
+    // public double l;
+    private double l;
 
-    public double l;
+    // public double height;
+    private double height;
 
-    public double height;
+    // Nümunə 4
+    // public boolean turnOn;
+    private boolean turnOn;
 
 
     public double getWidth() {
@@ -87,10 +95,21 @@ public class Rectangle {
         System.out.println("Success login");
     }
  */
+
+    // Nümunə 4
+    // is boolean
+    public boolean isTurnOn() {
+        return turnOn;
+    }
+
+    public void setTurnOn(boolean turnOn) {
+        this.turnOn = turnOn;
+    }
 }
 
 /*
-        Alt İnsert edəndə (genrate) niyə getter və setter ayrı-ayrı və bir yerdə var idi?. Çünki elə məlumat ola bilərki....
+        Alt İnsert edəndə (genrate) niyə getter və setter ayrı-ayrı və bir yerdə var idi?. Çünki elə məlumat ola bilərki
+        biz onu ancaq daxil etmək istəyirik. Həm daxil edib həmdə göstərmək istəsək set sonra get edirik
 
         Get edəndə sadəcə məlumatları toplayıram. setWidth olmasa mən məlumatları set edə bilmirəm. Sadəcə olsa idi getWitdht
         və setWidth olsa idi həm məlumatları toplayıram həmdə set (göstərirəm). Necə baş verir?
@@ -156,9 +175,17 @@ public class Rectangle {
         Bu Entity (mənbə) bir başabase ilə əlaqəlidir deyə ciddi problem olacaq. CORS ilə kiberattack ola bilər. Mən birbaşa
         əsas klasa bağlanmışam axı (əsas classın obyektini yaratmışam çünki).  
 
-
-
         Dao - Data Access Object
-    }
+
+
+        Nümunə 4 - dəki kimi boolean tipində dəyər yazsanda isTurnOn alırıq. Encapsulationda bu qanun ancaq adiddir
+        boolean dəyərlərə. Boolean məntiqi ilə baxsaq məsələn zəka hal hazırda sinifdədir. Boolean olaraq sinifədidrsə
+        true deyilsə false qayıdacaq. Burda boolean məntiqində proyektor qoşuluDUR? kimi bir məntiq yaranır. Yes yada no
+        Burda sualın qoyuluşu dəyişir. Proyektor qoşuluDURMU?. return edəndə set olduğu kimi qalır amma get yerinə is olur
+
+
+
+
+}
 
  */
