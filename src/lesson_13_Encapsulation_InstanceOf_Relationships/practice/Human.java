@@ -1,4 +1,4 @@
-package Lesson_13;
+package lesson_13_Encapsulation_InstanceOf_Relationships.practice;
 
 public class Human extends Object{
     private String name;

@@ -1,12 +1,44 @@
 package lesson_12_Inheritance;
 
-import javax.print.attribute.standard.MediaSize;
-
 public class Main {
     public static void main(String[] args) {
-        Dog a = new Dog("labrador");
-        a.name = "labrador";
+        Dog a = new Dog("labrador"); // constructor kimi ötürmüşəm parametri, a.name = "labrador"; buna ehtiyac yoxdur
+        System.out.println(a.name);
+        // a.name = "labrador";
         a.display();
+
+        // Nümunə 2
+
+        Mercedes mercedes = new Mercedes();
+        mercedes.brandName = "svarovski";
+
+
+
+        Person person = new Person();
+        person.namePerson = "ali";
+
+        Student_İs_a_relationship student_i̇s_a_relationship = new Student_İs_a_relationship();
+        student_i̇s_a_relationship.namePerson = "vali";
+        student_i̇s_a_relationship.creditCard = "aa12";
+        student_i̇s_a_relationship.surnamePerson = "Aliyev";
+        System.out.println(student_i̇s_a_relationship.namePerson);
+        System.out.println(student_i̇s_a_relationship.surnamePerson);
+        System.out.println(student_i̇s_a_relationship.creditCard);
+
+
+        // Nümunə 5 - Override
+        Dog dog = new Dog("assa");
+        dog.eat(); // Dog və Animal clasında olan eat methodlarılnı çağıracaq
+
+        Student_Has_a_relationship studentHasARelationship = new Student_Has_a_relationship();
+
+        studentHasARelationship.person.namePerson = "aftandil";
+        studentHasARelationship.teacher.jobTitle = "iş";
+
+
+
+
+
     }
 }
 
@@ -48,17 +80,66 @@ public class Main {
     Animal'ın constructorunun birə bir əvəzləyicisi olmalıdır. Dogdan Animalın nəyinisə işlədirəmsə burda dog içindədə olmalıdır
     Cat'in içindədə olmalıdır. Bu necə baş verir?. this classın içindəki instance (non-static) variableyə gedir. (thisin
     2 növü var. 1) constructorlar bir birini çağırırdı olurda constructor overriding. 2) birdəki fieldaları çağırıram)
-    Amma super olduğumuz classdan bir başa bizi super classa aparır. a. yazdıqda Animalın (name, eat) dəyərlərinin çıxmasında
-    səbəb odurki
+    Amma super olduğumuz classdan bir başa bizi olduğumuz clasdan super classa aparır. a. yazdıqda Animalın (name, eat)
+    dəyərlərinin çıxmasında səbəb odurki, a. yazdıqda dog'un constructoruna müraciət edirəm, odaki super keywordu vasitəsi
+    ilə Animala yönləndirir. super'ə click etsək Animala yönləndirəcək
+    Ardıcıllıqla desək. Dog obyektinin içindəki labrador gedir Dog clasının constructoruna ordakı super keywordünə müraciət
+    edir odakı bağlıdır Animal clasına. Çünki Dog clasının super clasıdır. Animaldakı constructorda parametr kimi gəlir
+    labrador odaki this.name = labrador olur. Bu zaman a.name deyib çağırdıqda labrador gəlir.
+    Constructora baxıram, odaname ötürməyimi tələb edir. name isə super classdan. super keywordu ilə gedib super classdan
+    name dəyişənini götürürəm gətirib qoyuram Dog a = new Dog(name:)
+    Biz Animal classındakı String name'i protected etməliyikki ancaq bu dəyişəni subclassları istifadə etsin. protected
+    edilən dəyər gizli olsa belə Animal classını extend edən bütün classlar onu görür
+
+
+    * İnhertance mövzusuna yenə bir misal çəksək, oğul classı ata classını extend edir. Atanın odun doğrama bacarığı var
+    Oğulunda komputerlə məşğul olma bacarığı var. Oğul classıda da Ata clasını extend etdiyi üçün Ata classının odun doğrama
+    xüsusiyyətində alır (methodunuda alır) özünədə aid komputer bacarığl olur. Oğul clasında sub clası olan nəvə clasıda
+    extend edir Baba classını və bizneslə məşğul ola bilir. O zaman nəvə həm odun doğraya həm komputerlə məşğul ola, həmdə
+    bizneslə məşğul ola bilir
+
+
+    İs a relationship - one to one
+
+    Person, Student, Teacher məntiqi ilə baxsaq deyə bilərikki burada is a mıntiqi var. Personda insandır, teacher və studendə
+    insandır. O zaman Student is a Person, Teacher is a Person. Sub classdan super classa. İS a relationship mənitiqində
+    Suoer classın xüssiyyətlərini ötürürdüm
 
 
 
 
+    Has a relationship - Student_Has_a-relationship classında yazmışam
 
-     Has a relationship -
+    Nümunə 4 Has a relation ship - məntiqində bir başa classın özünü gətirib field kimi qoyuram. Studentin övladıdır (subclass)
+    sanki, extend OLMUR BURDA. İs a relationship əlaqəsində biz Personun xüsusiyyətlərini ötürürdüm. Burda isə özünü ötürürəm
+    (studentHasARelationship.) yazanda name və surname ÇIXMIR çünki extend YOXDUR !!!. studentHasARelationship.person.name
+    nəsə yazanda adı əldə etmiş oluram
+
+    Nümunə 5 -
+
+    Kapital bank  has a işçilər - one to many.
+
+    KapitalBank kapitalBank = new KapitalBank();
+
+    kapitalBank.employess.name  // Userin nameini gətirmək istəsəm edə bilirəm. Userin clasına çatmaq üçün
+
+    Misal: Kataqoriya kimi baxaq. Userin assesmentləri (imtahan nəticəsi) var (one to many). Userin bir çox qiymətləndirilməsi
+    olar. Userdə backend sahəsindədi. Ortada catagoriya yaradıram. Burda java, phtyon, go, ruby, linux, front, scrummaster,
+    biznes analitik və s. Scrummasterdən 50 dəfə imtahanda verə bilərəm, 50 dənədə kataqoriyam ola bilər. Asisment və Catagoriya
+    arasındada (many to many) əlaqə var. Hər catagoriyanın öz sub catagoriyaları olacaq (one to many). Javanında: OCA, OCP,
+    OCE, OCI. katagoriyaları var. (one to many). Hər OCA imahanında içində sub catagoriyaları olan quiz'ləri, 1) start level,
+    2) medium, 3) expert, 4) real case (OCE --> Quizlər one to many). Hər bir quiz'in özünün question'ları var (one to many)
+    Questionlarında answer catagoriyası açılır. Bir sualın tək cavabıda olar (one to one) qapalı sual olar yəni. Yada bir
+    sualın 2 və daha çox cavabıda olar (one to many). Bu zaman cavablardan question'a bağantıda olur (many to one).
+    Single və multi olanlarında true və false catagoriyaları olur.
+    Singe cavabda true və false catagoriyalar arasında ( bir cavab bir düz --> one to one & bir cavab çoxlu səhf --> one to many)
+    Multi olanlarda isə false yazdıqlarımda ayrıdı true yazdıqlarımda ayrıdı. Bu Core Javada uzun formada olur
 
 
-
-
-
+    Override etmək
+    Nümunə 5 də olduğu kimi alt insert edib Overriding method seçirəm. Və Animal classında olan eat methodunu Dog clasında
+    dəyişdirirəm. Sakni üzərindən əzib keçirəm
+    Dog classının eat metdunda olan super super keywordunu silsəm
+    Dog və Animal classında olan eat methodlarını public yada protected etsəm heç bir dəyişiklik OLMAZ !!!
+    Biri public digəri protected olsa xəta olacaq
 */

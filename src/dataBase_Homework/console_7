@@ -1,0 +1,24 @@
+CREATE TABLE Orders
+(
+    OrderID SERIAL PRIMARY KEY,
+    OrderNumber VARCHAR(20),
+    OrderDate DATE,
+    OrderPrice DECIMAL(10, 2),
+    Status VARCHAR(20),
+    CustomerID INT,
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
+
+INSERT INTO Orders(OrderNumber, OrderDate, OrderPrice, Status, CustomerID)
+VALUES ('ORD001', '2023-06-01', 1000.00, 'Completed', 1),
+       ('ORD002', '2023-06-05', 500.00, 'Completed', 2),
+       ('ORD003', '2023-06-10', 750.00, 'Pending', 3);
+
+
+SELECT *
+FROM Orders
+WHERE Status = 'Completed';
+
+SELECT *
+FROM Orders
+WHERE CustomerID = 2;

@@ -1,0 +1,16 @@
+CREATE TABLE Sales
+(
+    SaleID    SERIAL PRIMARY KEY,
+    ProductID INT,
+    Quantity  INT,
+    Price     DECIMAL(10, 2),
+    Revenue   DECIMAL(10, 2),
+    FOREIGN KEY (ProductID) REFERENCES Products01 (ProductID)
+);
+
+INSERT INTO Sales (ProductID, Quantity, Price, Revenue)
+VALUES (1, 10, 10.99, 109.90),
+       (2, 5, 25.99, 129.95);
+
+SELECT sum(Revenue)
+FROM Sales;

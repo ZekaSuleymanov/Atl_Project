@@ -158,7 +158,8 @@ public class Main {
 
         1) public - Metodu İSTƏNİLƏN klasın və package daxilindən çağıra bilərik
         2) private - Heç bir klass ya da package içindən çağıra BİLMİRƏM !!! Ancaq olduğu klasın içindən çağıra bilərəm
-        3) protected - bir-biri ilə əlaqədə olan classlar arasında görünür. Yəni classı, ancaq öz subclassları görəcəyi bir qorumalı qaba qoyuram
+        3) protected - bir-biri ilə əlaqədə olan classlar arasında görünür. Yəni classı, ancaq öz subclassları görəcəyi
+        bir qorumalı qaba qoyuram. super classın özündə və subclasslarda istifadə edə bilərəm
         4) default (package private) - eyni package içində olanda, package içində hər yerdə (müxtəlif classlarda) çağıra bilirik
 
 

@@ -1,0 +1,15 @@
+CREATE TABLE Customers
+(
+    CustomerID SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    email VARCHAR(50),
+    phone VARCHAR(20)
+);
+
+INSERT INTO Customers(name, email, phone)
+VALUES ('Acme Corp', 'info@acme.com', '123-456-7890'),
+            ('XYZ Company', 'info@xyz.com', '987-654-3210'),
+            ('ACB Enterprises', 'info@acb.com', '555-555-5555');
+
+SELECT name, email
+FROM Customers

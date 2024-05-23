@@ -1,4 +1,4 @@
-package Lesson_13;
+package lesson_13_Encapsulation_InstanceOf_Relationships.practice;
 
 public class Family {
     private Human mother;

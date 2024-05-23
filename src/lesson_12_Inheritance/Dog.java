@@ -6,6 +6,13 @@ public class Dog extends Animal{
         super(name);
     }
 
+    // Nümunə 5
+    @Override
+    protected void eat() {
+        System.out.println("A can eat 2kg in one day");
+        super.eat();
+    }
+
     public void display(){
         System.out.println("My name is " + name);
     }

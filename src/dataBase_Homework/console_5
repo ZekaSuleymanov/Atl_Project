@@ -1,0 +1,17 @@
+CREATE TABLE Employess
+(
+    Employess SERIAL PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Position  VARCHAR(50),
+    Salary DECIMAL(10, 2)
+);
+
+INSERT INTO Employess(FirstName, LastName, Position, Salary)
+VALUES ('John', 'Doe', 'Manager', 5000.00),
+       ('Jane', 'Snmith', 'Salesperson', 3000.00),
+       ('Mike', 'Johnson', 'Technician', 2500.00);
+
+SELECT FirstName, LastName
+FROM Employess
+WHERE Position <> 'Manager';
