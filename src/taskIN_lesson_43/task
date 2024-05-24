@@ -1,0 +1,104 @@
+CREATE TABLE Sales03
+(
+    ID SERIAL PRIMARY KEY,
+    Product VARCHAR(20),
+    Quantity INTEGER,
+    Price DECIMAL(10, 2)
+);
+
+
+/*
+ ('Toybox', 65, 1),
+       ('Snikers', 50, 3),
+       ('Twix', 30, 5),
+       ('Oero', 40, 4)
+ */
+INSERT INTO Sales03(Product, Quantity, Price)
+VALUES ('Kinder', 150, 3);
+
+
+
+SELECT *
+FROM Sales03;
+
+SELECT sum(Sales01.Quantity)
+FROM Sales01;
+
+SELECT avg(Price)
+FROM Sales01;
+
+SELECT Product,
+sum(Price),
+avg(Price),
+min(Price),
+max(Price),
+count(Price)
+FROM Sales03
+GROUP BY Product;
+
+
+
+CREATE TABLE Expenses
+(
+    ID SERIAL,
+    Catagory VARCHAR,
+    Amount DECIMAL (10, 2)
+);
+
+INSERT INTO Expenses(Catagory, Amount)
+VALUES ('Transport',500),
+       ('Education', 230),
+       ('Food', 330),
+       ('Enjoy', 400);
+
+SELECT *
+FROM Expenses;
+
+SELECT sum(Expenses.Amount)
+FROM Expenses;
+
+SELECT avg(Expenses.Amount)
+FROM Expenses;
+
+
+CREATE TABLE Products
+(
+    ID SERIAL PRIMARY KEY,
+    Name VARCHAR(50),
+    Price DECIMAL(10, 2)
+);
+
+INSERT INTO Products(Name, Price)
+VALUES ('Freezer', 2400),
+       ('Washing Machine', 3000),
+       ('Conditioner', 1850),
+       ('Television', 2000);
+
+SELECT *
+FROM Products;
+
+
+SELECT min(Products.Price)
+FROM Products;
+
+SELECT max(Products.Price)
+FROM Products;
+
+
+CREATE TABLE Universty
+(
+    ID SERIAL PRIMARY KEY,
+    Students VARCHAR(50),
+    Grades DECIMAL(10, 2)
+);
+
+
+INSERT INTO Universty(Students, Grades)
+VALUES ('Zəka Süleymanov', 10),
+       ('Günel Həsənova', 10),
+       ('Aqil Həsənov', 9),
+       ('İlqar Mustafayev', 8);
+
+SELECT *
+FROM Universty
+WHERE Grades > (SELECT avg(Grades) FROM Universty);
