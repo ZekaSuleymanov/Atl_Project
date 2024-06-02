@@ -1,4 +1,4 @@
-package lesson_12_Inheritance;
+package lesson_12_Inheritance_OOP_principles;
 
 public class Student_Has_a_relationship {
     public String creditCard;

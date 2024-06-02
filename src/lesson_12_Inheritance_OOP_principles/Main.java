@@ -1,4 +1,4 @@
-package lesson_12_Inheritance;
+package lesson_12_Inheritance_OOP_principles;
 
 public class Main {
     public static void main(String[] args) {

@@ -49,7 +49,7 @@ public class Main {
 
         // Nümunə 7
         Ulubaba ulubaba = new Ulubaba();
-        // Baba babba = (Baba) ulubaba;
+        // Baba babba = (Baba) ulubaba; // Down casting
         // babba.otBicmek(); // ClassCastException verəcək. Baba Ulubaba ola BİLMƏZ !!!
 
         //Baba baba1 =  new Ulubaba();
@@ -96,6 +96,20 @@ public class Main {
         System.out.println("\n");
 
         d1.display('#');
+
+
+
+        // Nümunə 13 - Polimorfik variable
+
+        Language l2;
+
+        l2 = new Language();
+        l2.displayInfo();
+
+
+        l2 = new Jjava();
+        l2.displayInfo();
+
 
 
         System.out.println(baba instanceof Ulubaba);
@@ -218,5 +232,37 @@ public class Main {
 
 
     Nümunə 12
-    * Burada
+    * Burada display metodu ilk boş göndərililib. 2ci istifadədə isə parametli istifadə edilib. Öncələr dediyimiz manat
+    dollar misalı. Yəni yazdığımız metodun parametrləri sonradan arta bilər. Məsələn valyuta metodumda parametr kimi manat
+    idi. Sonrakı gün ona dollarda əlavə edirəm. Bir sonrakı gündə evro əlavə edirəm. Buda Overloading adlanır.
+    * Bu Compail Time Polymorphismdir
+
+    * Runtime Polymorphism - metod Overridingdir / əzib keçirəm
+    * Comapil time Polymorphism isə Overloadingdir / eyni adlı metodun parametrini fərqli-fərqli şəkildə həddən artıq yükləməkdir
+
+    * Polymorphism - class və obyektlər arasında 2 və daha çox fərqli fərqli formalar deməkdir. 2 forması var
+        1) Runtime Polymorphism
+        2) Compail Time Polymorphism
+
+
+    Polymorphism olan variablelər
+    * Sanki variable'ı əvvəlcədən bildirmək kimi bir şeydir
+    * l2 = new Language(); - yazaraq Language'in obyektini yaratdım
+    * l2 = new Jjava(); - Subclass olanı Jjavanı upcasting etdim Languageyə
+    * Burdan o anlaşılırki 2 eyni tipdə variable adı olsa belə (referance) fərqli yerlərdə istifadə edə bilirik.
+    * Amma biz demişdik 1 referance ilə 2 obyekt yarada BİLMƏRİK !!!. Yəni: String b = new String(); yazdıqdan sonra
+    2-ci dəfə eyni cür yazıb çağıra BİLMİRİK. Lakin b = new String(); yazıb çağıra bilirik. bu zaman fərqli referanslara
+    müraciət edirlər Buda polimorfik variable adlanır:
+        Doğru - Polimorfik variable  fərqli referanslara müraciət edir          Yalnış - error verəcək
+     String s = new String();                                                   String s1 = new String();
+     s = new String                                                             String s1 = new String();
+    * İşlətdiyimiz variableları polimorfik variable'lar kimi adlandıra bilirik. Bir varibale adı ilə 2 obyekt yaradaq
+    Bu istifadə edilimir interviyuda soruşula bilər.
+    * 1 referance adı (variable) ilə 2 obyekt yaratmaq OLAR !!! "new" keywordu ilə yazılan hər şeyə, new keywordu yeni
+    REFERANCE VERIR
+    * Müraciət etdikləri referans fərqli yerlərdi
+
+
+     ClassCasttException
+     NoClassDeFoundError fərqləri nədir??
 */
