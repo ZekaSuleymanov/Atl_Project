@@ -150,8 +150,9 @@ public interface CanRun {
         * Creational Desing Patterns 5 növü var
 
         1) Singleton -  databasa ilə connection yaratmaq üçün obyektin təkrarən yaradılmasının qarşısını alır.
+
         getDbconnection metodu yaradıram və orada yoxlayır ki həmin classın instance'ı (obyekti) varsa yeni obyekt YARATMIR !!!
-        həmin obyekti return edir. Yoxdursa yeni obyekt yaradır və oni return edir
+        həmin obyekti return edir. Yoxdursa yeni obyekt yaradır və onu return edir
         Şərtləri:
         1) Constructor private olmalıdır
         2) Static metod olmalıdır, hansıki içində obekt yaradırıq - həmin classın obyektini yəni
@@ -171,6 +172,9 @@ public interface CanRun {
         Məntiq odurki database'im var və hal-hazırda işləyir. Mən obyekti gedib bir daha yaradıram o zaman yeni bazaya
         qoşulur. Bir bazada gündə 50 dəfə yenilənədə BİLMƏZ !!!. Məsələn Kapital Bank yarandığı gündən eyni obyektin üstündə
         işləyir. Gündə bir obyekti YARANMAMALIDIR !!!. Yaransa belə içindəki datalar yeni obyektə köçürülür referansım oradı
+
+        Hər dəfə yeni obyekt YARANMAMALIDIR!!!. Çünki hər dəfə data bazada yeni yer ayırır. Yaransa belə yenə öncəki data
+        bazanın məlumatlarını yenisinə köçürəcək
 
         Ardı Singleton package içindədi ---->
 

@@ -1,6 +1,5 @@
-package Lesson_17;
+package lesson_17_Collections_List_Set_Iterator_Vector_Stack_Hashset.practice;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class CheckNum {

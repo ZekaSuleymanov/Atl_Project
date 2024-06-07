@@ -1,6 +1,5 @@
-package Lesson_16;
+package lesson_16.practice;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class RandomGame {
